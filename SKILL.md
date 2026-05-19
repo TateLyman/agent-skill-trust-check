@@ -33,7 +33,7 @@ For JSON output:
 node bin/agent-skill-trust-check.js ./SKILL.md --json
 ```
 
-Run without cloning:
+Planned npm command after the first npm publish:
 
 ```bash
 npx --yes agent-skill-trust-check ./SKILL.md --json
