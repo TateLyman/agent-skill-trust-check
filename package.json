@@ -3,9 +3,25 @@
   "version": "0.1.0",
   "description": "Static pre-install trust check for agent skills, SKILL.md files, and skill marketplace listings.",
   "type": "module",
+  "homepage": "https://github.com/TateLyman/agent-skill-trust-check#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TateLyman/agent-skill-trust-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TateLyman/agent-skill-trust-check/issues"
+  },
   "bin": {
     "agent-skill-trust-check": "bin/agent-skill-trust-check.js"
   },
+  "files": [
+    "bin/",
+    "examples/",
+    "SKILL.md",
+    "skill.json",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "check": "node --check bin/agent-skill-trust-check.js && node bin/agent-skill-trust-check.js examples/risky-skill.md --json > /tmp/agent-skill-trust-check.json"
   },
@@ -21,5 +37,9 @@
   "license": "MIT",
   "engines": {
     "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
