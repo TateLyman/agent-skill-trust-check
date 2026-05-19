@@ -11,7 +11,7 @@ tags:
   - wallets
   - mcp
 price: 700
-publisher_wallet: "0x7bc5e304ca289823dec021012d6bb361ddf6b368"
+publisher_wallet: "0x568A89918BAbDB30869D03c1214fd45fF919e75D"
 license: "MIT"
 model_tier: "any"
 type: "skill"
