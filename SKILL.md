@@ -18,13 +18,22 @@ Use this when an agent is about to install or recommend a skill from:
 - MCP-linked skill bundles.
 - GitHub repositories that include a `SKILL.md`, tool manifest, or install script.
 
-## Run
+## Run From The Public Repo
 
 ```bash
-npx --yes agent-skill-trust-check ./SKILL.md
+git clone https://github.com/TateLyman/agent-skill-trust-check.git
+cd agent-skill-trust-check
+npm run check
+node bin/agent-skill-trust-check.js ./SKILL.md
 ```
 
 For JSON output:
+
+```bash
+node bin/agent-skill-trust-check.js ./SKILL.md --json
+```
+
+After npm publication, the reserved package command is:
 
 ```bash
 npx --yes agent-skill-trust-check ./SKILL.md --json

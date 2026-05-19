@@ -57,6 +57,10 @@ For private review work:
 
 https://tateprograms.com/payments.html
 
+For creator marketplace submission copy, see:
+
+`marketplace/agensi-listing.md`
+
 ## Boundary
 
 This scanner is a static text pass. It does not execute the target skill and it does not replace sandboxing, code review, dependency review, or runtime monitoring.
