@@ -1,0 +1,25 @@
+{
+  "name": "agent-skill-trust-check",
+  "version": "0.1.0",
+  "description": "Static pre-install trust check for agent skills, SKILL.md files, and skill marketplace listings.",
+  "type": "module",
+  "bin": {
+    "agent-skill-trust-check": "bin/agent-skill-trust-check.js"
+  },
+  "scripts": {
+    "check": "node --check bin/agent-skill-trust-check.js && node bin/agent-skill-trust-check.js examples/risky-skill.md --json > /tmp/agent-skill-trust-check.json"
+  },
+  "keywords": [
+    "agent-skills",
+    "skill-md",
+    "openclaw",
+    "hermes",
+    "mcp",
+    "security"
+  ],
+  "author": "Tate Programs",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
