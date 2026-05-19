@@ -8,7 +8,7 @@ tags:
   - skill-md
   - marketplace
   - mcp
-version: "0.1.0"
+version: "0.1.1"
 author: Tate Programs
 wallet_address: "0x7bc5e304ca289823dec021012d6bb361ddf6b368"
 ---

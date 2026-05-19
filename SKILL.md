@@ -33,7 +33,7 @@ For JSON output:
 node bin/agent-skill-trust-check.js ./SKILL.md --json
 ```
 
-After npm publication, the reserved package command is:
+Run without cloning:
 
 ```bash
 npx --yes agent-skill-trust-check ./SKILL.md --json

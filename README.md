@@ -19,7 +19,7 @@ Run against a public GitHub/raw/Gist URL from the checkout:
 node bin/agent-skill-trust-check.js https://raw.githubusercontent.com/owner/repo/main/SKILL.md --json
 ```
 
-The npm package name is reserved for:
+Run without cloning:
 
 ```bash
 npx --yes agent-skill-trust-check ./SKILL.md

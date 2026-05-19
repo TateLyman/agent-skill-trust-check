@@ -1,6 +1,6 @@
 {
   "name": "agent-skill-trust-check",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Static pre-install trust check for agent skills, SKILL.md files, and skill marketplace listings.",
   "type": "module",
   "homepage": "https://github.com/TateLyman/agent-skill-trust-check#readme",
