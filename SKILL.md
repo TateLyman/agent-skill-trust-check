@@ -1,3 +1,69 @@
+---
+spec: usk/1.0
+name: agent-skill-trust-check
+version: 0.1.1
+description: Static pre-install trust review for SKILL.md, OpenClaw, Hermes, MCP, and agent-skill marketplace packages before they request local, account, payment, or external access.
+interface:
+  type: cli
+  entry_point: bin/agent-skill-trust-check.js
+  runtime: node
+  call_pattern: args
+input_schema:
+  type: object
+  properties:
+    target:
+      type: string
+      description: Local path or public GitHub/raw/Gist URL for a skill or SKILL.md file.
+    json:
+      type: boolean
+      description: Return structured JSON output.
+  required:
+    - target
+output_schema:
+  type: object
+  properties:
+    verdict:
+      type: string
+      description: Static install-readiness verdict.
+    risk_score:
+      type: integer
+      description: Aggregate static risk score.
+    findings:
+      type: array
+      description: Matched risky behavior signals and suggested fixes.
+    missing_signals:
+      type: array
+      description: Provenance or safety signals not found in the target text.
+permissions:
+  network: true
+  filesystem: true
+  subprocess: false
+  env_vars: []
+category: security
+capabilities:
+  - skill_review
+  - agent_skill_security
+  - marketplace_vetting
+  - mcp_review
+tags:
+  - security
+  - agent-skills
+  - skill-review
+  - mcp
+author: Tate Programs
+license: MIT
+homepage: https://github.com/TateLyman/agent-skill-trust-check
+platform_compatibility:
+  - Claude Code
+  - Codex CLI
+  - Cursor
+  - Gemini CLI
+  - OpenClaw Agent
+requirements:
+  node: ">=20"
+changelog: Added marketplace-friendly USK metadata for agent-skill registry indexing.
+---
+
 # Agent Skill Trust Check
 
 Use this skill before installing a third-party agent skill, SKILL.md package, MCP-linked skill, or marketplace listing.
