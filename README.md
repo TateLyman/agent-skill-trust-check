@@ -72,6 +72,7 @@ For creator marketplace submission copy, see:
 Additional marketplace-ready skill files:
 
 - `marketplace/paperclip-skill.md` for Paperclip Skills publish flow.
+- `marketplace/paperclip-skill-release-gate.md` for the paid Paperclip pre-publish release-gate skill.
 - `marketplace/skillshop-skill.md` for SkillShop private-repo listings.
 
 ## Boundary
