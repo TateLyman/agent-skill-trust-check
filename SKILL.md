@@ -1,24 +1,24 @@
 ---
 spec: usk/1.0
 name: agent-skill-trust-check
-version: 0.1.1
+version: 0.1.2
 description: Static pre-install trust review for SKILL.md, OpenClaw, Hermes, MCP, and agent-skill marketplace packages before they request local, account, payment, or external access.
 interface:
   type: cli
-  entry_point: bin/agent-skill-trust-check.js
+  entry_point: bin/agent-skill-trust-check-stdin.js
   runtime: node
-  call_pattern: args
+  call_pattern: stdin_stdout
 input_schema:
   type: object
   properties:
+    text:
+      type: string
+      description: SKILL.md, marketplace description, or install instructions to review before installation.
     target:
       type: string
-      description: Local path or public GitHub/raw/Gist URL for a skill or SKILL.md file.
-    json:
-      type: boolean
-      description: Return structured JSON output.
+      description: Optional source label for the reviewed text.
   required:
-    - target
+    - text
 output_schema:
   type: object
   properties:
@@ -35,8 +35,8 @@ output_schema:
       type: array
       description: Provenance or safety signals not found in the target text.
 permissions:
-  network: true
-  filesystem: true
+  network: false
+  filesystem: false
   subprocess: false
   env_vars: []
 category: security
@@ -61,7 +61,7 @@ platform_compatibility:
   - OpenClaw Agent
 requirements:
   node: ">=20"
-changelog: Added marketplace-friendly USK metadata for agent-skill registry indexing.
+changelog: Added a marketplace-safe stdin runner that needs no filesystem or network access.
 ---
 
 # Agent Skill Trust Check
@@ -93,6 +93,12 @@ npm run check
 node bin/agent-skill-trust-check.js ./SKILL.md
 ```
 
+Marketplace-safe stdin mode:
+
+```bash
+node bin/agent-skill-trust-check-stdin.js < ./SKILL.md
+```
+
 For JSON output:
 
 ```bash
@@ -118,7 +124,7 @@ Before installation, check:
 
 ## Boundaries
 
-This is a static pre-install check. It does not execute the target skill and does not prove the runtime is safe.
+This is a static pre-install check. The marketplace-safe runner reads only stdin and returns JSON. The local CLI can also read a local path or a public GitHub/raw/Gist URL when run from the repository checkout. Neither mode executes the target skill or proves the runtime is safe.
 
 For marketplace-grade review, use the paid Agent Skill Trust Check listing:
 

@@ -1,6 +1,6 @@
 {
   "name": "agent-skill-trust-check",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Static pre-install trust check for agent skills, SKILL.md files, and skill marketplace listings.",
   "type": "module",
   "homepage": "https://github.com/TateLyman/agent-skill-trust-check#readme",
@@ -16,6 +16,7 @@
   },
   "files": [
     "bin/",
+    "lib/",
     "examples/",
     "SKILL.md",
     "skill.json",
@@ -23,7 +24,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "check": "node --check bin/agent-skill-trust-check.js && node bin/agent-skill-trust-check.js examples/risky-skill.md --json > /tmp/agent-skill-trust-check.json"
+    "check": "node --check lib/analyze.js && node --check bin/agent-skill-trust-check.js && node --check bin/agent-skill-trust-check-stdin.js && node bin/agent-skill-trust-check.js examples/risky-skill.md --json > /tmp/agent-skill-trust-check.json && node bin/agent-skill-trust-check-stdin.js < examples/risky-skill.md > /tmp/agent-skill-trust-check-stdin.json"
   },
   "keywords": [
     "agent-skills",

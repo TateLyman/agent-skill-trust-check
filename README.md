@@ -19,6 +19,12 @@ Run against a public GitHub/raw/Gist URL from the checkout:
 node bin/agent-skill-trust-check.js https://raw.githubusercontent.com/owner/repo/main/SKILL.md --json
 ```
 
+Run the marketplace-safe stdin wrapper:
+
+```bash
+node bin/agent-skill-trust-check-stdin.js < ./SKILL.md
+```
+
 Planned npm command after the first npm publish:
 
 ```bash
@@ -46,6 +52,8 @@ The CLI returns:
 - `positives`
 - `missing_signals`
 - `patch_order`
+
+The stdin wrapper always returns compact JSON and does not read local files, fetch URLs, or spawn subprocesses. It is the safer entry point for agent-skill marketplaces that call tools with stdin/stdout contracts.
 
 ## Marketplace Review
 
