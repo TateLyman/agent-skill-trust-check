@@ -84,6 +84,12 @@ Use this when an agent is about to install or recommend a skill from:
 - MCP-linked skill bundles.
 - GitHub repositories that include a `SKILL.md`, tool manifest, or install script.
 
+## Run With npm
+
+```bash
+npx --yes agent-skill-trust-check@latest ./SKILL.md --json
+```
+
 ## Run From The Public Repo
 
 ```bash
@@ -103,12 +109,6 @@ For JSON output:
 
 ```bash
 node bin/agent-skill-trust-check.js ./SKILL.md --json
-```
-
-Planned npm command after the first npm publish:
-
-```bash
-npx --yes agent-skill-trust-check ./SKILL.md --json
 ```
 
 ## Review Rules

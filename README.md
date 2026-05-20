@@ -4,7 +4,13 @@ Static pre-install trust check for agent skills, `SKILL.md` files, and skill mar
 
 Agent skill marketplaces are useful, but installing a skill is still a trust decision. This repo provides a small local scanner and a portable `SKILL.md` review guide for checking public skill text before it gets installed.
 
-## Run
+## Run With npm
+
+```bash
+npx --yes agent-skill-trust-check@latest ./SKILL.md --json
+```
+
+## Run From Source
 
 ```bash
 git clone https://github.com/TateLyman/agent-skill-trust-check.git
@@ -23,12 +29,6 @@ Run the marketplace-safe stdin wrapper:
 
 ```bash
 node bin/agent-skill-trust-check-stdin.js < ./SKILL.md
-```
-
-Planned npm command after the first npm publish:
-
-```bash
-npx --yes agent-skill-trust-check ./SKILL.md
 ```
 
 ## What It Checks

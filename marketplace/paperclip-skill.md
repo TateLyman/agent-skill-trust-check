@@ -1,6 +1,6 @@
 ---
 name: "@tateprograms/agent-skill-trust-check"
-version: "0.1.1"
+version: "0.1.2"
 author: "Tate Programs"
 description: "Pre-install trust review for third-party agent skills, SKILL.md packages, and marketplace listings before they request local, account, payment, or external access."
 tags:
